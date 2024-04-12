@@ -1,3 +1,5 @@
+# THIS IS A WIP
+
 npx wrangler@latest d1 create cdph-starter
 
 npx wrangler d1 migrations create __YOUR_DATABASE_NAME__ create_tables
