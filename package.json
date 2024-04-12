@@ -1,0 +1,26 @@
+{
+  "name": "cloudflare-d1-prisma-honox-starter",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --mode client && vite build",
+    "preview": "wrangler pages dev ./dist",
+    "deploy": "$npm_execpath run build && wrangler pages deploy ./dist"
+  },
+  "private": true,
+  "dependencies": {
+    "@hono/zod-validator": "^0.2.1",
+    "@prisma/adapter-d1": "^5.12.1",
+    "@prisma/client": "^5.12.1",
+    "hono": "^4.2.2",
+    "honox": "^0.1.9"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240403.0",
+    "@hono/vite-cloudflare-pages": "^0.2.4",
+    "prisma": "^5.12.1",
+    "vite": "^5.0.12",
+    "wrangler": "^3.47.0",
+    "zod-prisma-types": "^3.1.6"
+  }
+}

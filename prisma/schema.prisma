@@ -1,0 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+model Todo {
+  id          Int      @id @default(autoincrement())
+  description String
+  completed   Boolean  @default(false)
+  createdAt   DateTime @default(now()) @map("created_at")
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+generator zod {
+  createRelationValuesTypes = true
+  output                    = "../app/generated/zod"
+  provider                  = "zod-prisma-types"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
