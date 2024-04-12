@@ -1,0 +1,6 @@
+name = "cloudflare-d1-prisma-honox-starter"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "$NAME"
+database_id = "$ID"
