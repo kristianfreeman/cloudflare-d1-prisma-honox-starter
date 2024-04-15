@@ -1,6 +1,6 @@
-import { Style } from 'hono/css'
-import { jsxRenderer } from 'hono/jsx-renderer'
-import { Script } from 'honox/server'
+import { Style } from "hono/css";
+import { jsxRenderer } from "hono/jsx-renderer";
+import { Script } from "honox/server";
 
 export default jsxRenderer(({ children, title }) => {
   return (
@@ -10,11 +10,12 @@ export default jsxRenderer(({ children, title }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title}</title>
         <Script src="/app/client.ts" async />
+        <script src="https://cdn.tailwindcss.com"></script>
         <Style />
       </head>
-      <body>
-        {children}
+      <body class="bg-slate-100 h-screen flex items-center justify-center">
+        <div class="container mx-auto min-h-64 max-w-screen-md space-y-4">{children}</div>
       </body>
     </html>
-  )
-})
+  );
+});
