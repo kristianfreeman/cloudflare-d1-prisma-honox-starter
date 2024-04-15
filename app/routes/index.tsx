@@ -8,7 +8,7 @@ export default createRoute(async (c) => {
 
   return c.render(
     <>
-      <div class="bg-white shadow p-4">
+      <div class="bg-white md:shadow p-4">
         <div class="flex items-center mb-4">
           <h1 class="flex-1 font-bold text-xl">Tracking {todo.length} {todo.length == 1 ? 'task' : 'tasks'}</h1>
           <form method="POST" action={`/todos/clear_completed`}>

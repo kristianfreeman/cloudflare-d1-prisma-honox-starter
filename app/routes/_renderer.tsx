@@ -13,7 +13,7 @@ export default jsxRenderer(({ children, title }) => {
         <script src="https://cdn.tailwindcss.com"></script>
         <Style />
       </head>
-      <body class="bg-slate-100 h-screen flex items-center justify-center">
+      <body class="bg-white md:bg-slate-100 h-screen flex md:items-center py-4 md:py-0 px-4 md:px-0 md:justify-center">
         <div class="container mx-auto min-h-64 max-w-screen-md space-y-4">{children}</div>
       </body>
     </html>
