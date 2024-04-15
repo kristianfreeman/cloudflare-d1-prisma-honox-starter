@@ -1,7 +1,12 @@
 import { createRoute } from "honox/factory";
+import { zValidator } from "@hono/zod-validator";
+import z from "zod";
 
-export const POST = createRoute(async (c) => {
-  const id = Number(c.req.param("id"));
+const ToggleTodoRouteSchema = z.object({ id: z.string() })
+
+export const POST = createRoute(zValidator("param", ToggleTodoRouteSchema), async (c) => {
+  const { id: idParam } = c.req.valid("param")
+  const id = Number(idParam);
 
   const todo = await c.get("prisma").todo.findUnique({
     where: {
