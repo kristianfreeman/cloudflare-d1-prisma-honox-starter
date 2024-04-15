@@ -1,5 +1,5 @@
-import { } from 'hono'
-import { PrismaClient } from "@prisma/client"
+import {} from 'hono'
+import { PrismaClient } from '@prisma/client'
 
 type Head = {
   title?: string
@@ -7,16 +7,14 @@ type Head = {
 
 declare module 'hono' {
   interface Env {
-    Variables: {}
+    Variables: {
+      prisma: PrismaClient
+    }
     Bindings: {
       DB: D1Database
     }
   }
   interface ContextRenderer {
     (content: string | Promise<string>, head?: Head): Response | Promise<Response>
-  }
-
-  interface ContextVariableMap {
-    prisma: PrismaClient
   }
 }
