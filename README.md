@@ -2,11 +2,12 @@
 
 A starter project showing how you can integrate [Prisma](https://www.prisma.io) and [Cloudflare D1](https://developers.cloudflare.com/d1) with a [HonoX](https://github.com/honojs/honox) application to build awesome full-stack apps.
 
-If the above paragraph was a bunch of buzzwords that seem confusing, here's the simple version:
-
-- HonoX is a _full-stack framework_ combining _backend API endpoints_ with the ability to render _frontend applications with React_
-- Cloudflare D1 is a _SQL database_
-- Prisma provides an _ORM wrapper_ around D1, to allow data models and querying using a straightforward syntax
+> [!TIP]
+> If the above paragraph was a bunch of buzzwords that seem confusing, here's the simple version:
+> 
+> - HonoX is a _full-stack framework_ combining _backend API endpoints_ with the ability to render _frontend applications with React_
+> - Cloudflare D1 is a _SQL database_
+> - Prisma provides an _ORM wrapper_ around D1, to allow data models and querying using a straightforward syntax
 
 ## Installation
 
