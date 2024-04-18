@@ -9,6 +9,8 @@ A starter project showing how you can integrate [Prisma](https://www.prisma.io) 
 > - Cloudflare D1 is a _SQL database_
 > - Prisma provides an _ORM wrapper_ around D1, to allow data models and querying using a straightforward syntax
 
+![Tweet](.github/hono-prisma.png)
+
 ## Installation
 
 0. Clone the database and install all dependencies:
