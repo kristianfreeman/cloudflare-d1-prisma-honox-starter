@@ -21,23 +21,32 @@ $ cd starter
 $ npm install
 ```
 
-1. Create a new D1 database using Wrangler:
+1. Copy the `wrangler.toml.example` file to `wrangler.toml` and fill in the necessary values:
 
 ```sh
-$ npx wrangler@latest d1 create starter # or name it something of your choice
+$ cp wrangler.toml.example wrangler.toml
 ```
 
-_Note that if you haven't yet used Wrangler, you will be prompted to login to Cloudflare._
+  - Replace `$APP_NAME` with your Cloudflare Workers application name
+  - Replace `$CURRENT_DATE` with the current date like this `2022-01-01`
+
+2. Create a new D1 database using Wrangler:
+
+```sh
+$ npx wrangler d1 create <your-database-name>
+```
+
+_Note that if you haven't yet used Wrangler, you will be prompted to log in to Cloudflare._
 
 Copy the output of this command, which is structured TOML configuration, into your `wrangler.toml`.
 
-2. Create a new migration file using the `d1 migrations` subcommand:
+3. Create a new migration file using the `d1 migrations` subcommand:
 
 ```sh
-$ npx wrangler d1 migrations create starter create_tables
+$ npx wrangler d1 migrations create <your-database-name> create_tables
 ```
 
-3. Using Prisma's CLI, generate a SQL file based on your Prisma schema in the empty migration file you just created:
+4. Using Prisma's CLI, generate a SQL file based on your Prisma schema in the empty migration file you just created:
 
 ```sh
 $ npx prisma migrate diff \
@@ -47,26 +56,26 @@ $ npx prisma migrate diff \
   --output migrations/0001_create_tables.sql
 ```
 
-4. Generate the necessary Prisma files for Zod validations and any other configured Prisma outputs:
+5. Generate the necessary Prisma files for Zod validations and any other configured Prisma outputs:
 
 ```sh
 $ npx prisma generate
 ```
 
-5. Apply the migration to your local database:
+6. Apply the migration to your local database:
 
 ```sh
-$ npx wrangler@latest d1 migrations apply cdph-starter
+$ npx wrangler d1 migrations apply <your-database-name>
 ```
 
-6. When you're ready, deploy your application:
+7. When you're ready, deploy your application:
 
 ```sh
-$ npx wrangler@latest deploy
+$ npm run deploy
 ```
 
-7. Once you've deployed your application, you can apply the migrations to your remote (production) D1 database:
+8. Once you've deployed your application, you can apply the migrations to your remote (production) D1 database:
 
 ```sh
-$ npx wrangler@latest d1 migrations apply cdph-starter --remote
+$ npx wrangler d1 migrations apply <your-database-name> --remote
 ```
