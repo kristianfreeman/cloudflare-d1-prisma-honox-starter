@@ -13,6 +13,4 @@ bun.lockb
 .env
 
 app/generated/
-migrations/*
-!migrations/.gitkeep
 prisma/prisma.schema
